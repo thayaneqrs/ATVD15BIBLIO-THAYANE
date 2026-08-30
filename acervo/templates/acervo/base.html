@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Biblioteca{% endblock %}</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4b2e83;
+            padding: 20px;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #4b2e83;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .card h2 a {
+            color: #4b2e83;
+            text-decoration: none;
+        }
+
+        .card h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4b2e83;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .voltar:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="{% url 'acervo:livros' %}">📚 Livros</a>
+            <a href="{% url 'acervo:autores' %}">✍️ Autores</a>
+            <a href="/admin/">⚙️ Administração</a>
+        </nav>
+    </header>
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+</body>
+
+</html>

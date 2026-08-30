@@ -1,0 +1,39 @@
+{% extends 'acervo/base.html' %}
+
+{% block title %}Autores - Biblioteca{% endblock %}
+
+{% block content %}
+
+<h1>✍️ Autores</h1>
+
+{% for autor in autores %}
+
+<div class="card">
+
+    <h2>
+        <a href="{% url 'acervo:autor_detalhes' autor.id %}">
+            {{ autor.nome }}
+        </a>
+    </h2>
+
+    <p>
+        <strong>E-mail:</strong>
+        {{ autor.email }}
+    </p>
+
+    <p>
+        <strong>Ano de nascimento:</strong>
+        {{ autor.ano_nascimento }}
+    </p>
+
+</div>
+
+{% empty %}
+
+<div class="card">
+    <p>Nenhum autor cadastrado.</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}

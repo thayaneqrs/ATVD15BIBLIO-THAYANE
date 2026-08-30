@@ -1,0 +1,32 @@
+{% extends 'acervo/base.html' %}
+
+{% block title %}{{ autor.nome }} - Biblioteca{% endblock %}
+
+{% block content %}
+
+<h1>✍️ {{ autor.nome }}</h1>
+
+<div class="card">
+
+    <p>
+        <strong>Nome:</strong>
+        {{ autor.nome }}
+    </p>
+
+    <p>
+        <strong>E-mail:</strong>
+        {{ autor.email }}
+    </p>
+
+    <p>
+        <strong>Ano de nascimento:</strong>
+        {{ autor.ano_nascimento }}
+    </p>
+
+</div>
+
+<a class="voltar" href="{% url 'acervo:autores' %}">
+    ← Voltar para autores
+</a>
+
+{% endblock %}

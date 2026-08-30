@@ -1,0 +1,43 @@
+{% extends 'acervo/base.html' %}
+
+{% block title %}Livros - Biblioteca{% endblock %}
+
+{% block content %}
+
+<h1>📚 Livros</h1>
+
+{% for livro in livros %}
+
+<div class="card">
+
+    <h2>
+        <a href="{% url 'acervo:livro_detalhes' livro.id %}">
+            {{ livro.titulo }}
+        </a>
+    </h2>
+
+    <p>
+        <strong>Data de lançamento:</strong>
+        {{ livro.data_lancamento }}
+    </p>
+
+    <p>
+        <strong>Editora:</strong>
+        {{ livro.editora }}
+    </p>
+
+    <p>
+        {{ livro.resumo|truncatewords:20 }}
+    </p>
+
+</div>
+
+{% empty %}
+
+<div class="card">
+    <p>Nenhum livro cadastrado.</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}

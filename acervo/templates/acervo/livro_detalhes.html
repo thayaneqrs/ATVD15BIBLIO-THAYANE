@@ -1,0 +1,40 @@
+{% extends 'acervo/base.html' %}
+
+{% block title %}{{ livro.titulo }} - Biblioteca{% endblock %}
+
+{% block content %}
+
+<h1>📖 {{ livro.titulo }}</h1>
+
+<div class="card">
+
+    <p>
+        <strong>Título:</strong>
+        {{ livro.titulo }}
+    </p>
+
+    <p>
+        <strong>Data de lançamento:</strong>
+        {{ livro.data_lancamento }}
+    </p>
+
+    <p>
+        <strong>Editora:</strong>
+        {{ livro.editora }}
+    </p>
+
+    <p>
+        <strong>Resumo:</strong>
+    </p>
+
+    <p>
+        {{ livro.resumo }}
+    </p>
+
+</div>
+
+<a class="voltar" href="{% url 'acervo:livros' %}">
+    ← Voltar para livros
+</a>
+
+{% endblock %}
